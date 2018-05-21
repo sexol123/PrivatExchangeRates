@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">PrivatExchangeRates</string>
+    <string name="app_name">ExchangeR</string>
+    <string name="text_ccy">Currency code</string>
+    <string name="text_base_ccy">National currency code</string>
+    <string name="text_buy">Purchase rate</string>
+    <string name="text_sale">Sales rate</string>
 </resources>

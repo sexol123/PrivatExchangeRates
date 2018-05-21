@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Курс валюти</string>
+    <string name="text_ccy">Код валюти</string>
+    <string name="text_base_ccy">Код національної валюти</string>
+    <string name="text_buy">Курс покупки</string>
+    <string name="text_sale">Курс продажу</string>
+</resources>
