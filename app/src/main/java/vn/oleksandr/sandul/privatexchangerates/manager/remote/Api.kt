@@ -10,5 +10,8 @@ interface Api {
     }
 
     @GET("/p24api/pubinfo?json&exchange&coursid=5")
-    fun getCurrency() : Single<List<CurrencyResponse>>
+    fun getCashExchangeRate() : Single<List<CurrencyResponse>>
+
+    @GET("/p24api/pubinfo?exchange&json&coursid=11")
+    fun getNonCashExchangeRate() : Single<List<CurrencyResponse>>
 }

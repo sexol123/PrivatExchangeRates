@@ -43,8 +43,5 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.ViewHolder>() {
         holder.textCcy.text = data[position].ccy
         holder.textBuy.text = data[position].buy
         holder.textSell.text = data[position].sale
-
     }
-
-
 }

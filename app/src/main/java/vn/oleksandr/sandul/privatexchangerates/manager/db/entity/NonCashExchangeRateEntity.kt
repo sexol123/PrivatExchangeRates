@@ -1,13 +1,12 @@
-package vn.oleksandr.sandul.privatexchangerates.manager.db
+package vn.oleksandr.sandul.privatexchangerates.manager.db.entity
 
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.Ignore
 import android.arch.persistence.room.PrimaryKey
 
-@Entity(tableName = "currency")
-data class CurrencyEntity(
-
+@Entity(tableName = "non_cash_exchange_rate")
+data class NonCashExchangeRateEntity(
         @PrimaryKey()
         @ColumnInfo(name = "currency_name")
         var ccy : String,

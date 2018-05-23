@@ -4,11 +4,16 @@ import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
+import vn.oleksandr.sandul.privatexchangerates.manager.db.dao.CashExchangeRateDao
+import vn.oleksandr.sandul.privatexchangerates.manager.db.dao.NonCashExchangeRateDao
+import vn.oleksandr.sandul.privatexchangerates.manager.db.entity.CashExchangeRateEntity
+import vn.oleksandr.sandul.privatexchangerates.manager.db.entity.NonCashExchangeRateEntity
 
-@Database(entities = [CurrencyEntity::class], version = 1)
+@Database(entities = [CashExchangeRateEntity::class, NonCashExchangeRateEntity::class], version = 2)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun currencyDao() : CurrencyDao
+    abstract fun cashExchangeRateDao() : CashExchangeRateDao
+    abstract fun nonCashExchangeRateDao() : NonCashExchangeRateDao
 
     companion object {
         var INSTANCE : AppDatabase? = null
@@ -18,6 +23,7 @@ abstract class AppDatabase : RoomDatabase() {
                     INSTANCE = Room
                             .databaseBuilder(context.applicationContext,
                                     AppDatabase::class.java, "currency.db")
+                            .fallbackToDestructiveMigration()
                             .build()
                 }
             }
