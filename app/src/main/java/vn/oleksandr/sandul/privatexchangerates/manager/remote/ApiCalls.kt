@@ -3,7 +3,7 @@ package vn.oleksandr.sandul.privatexchangerates.manager.remote
 import io.reactivex.Single
 import retrofit2.http.GET
 
-interface Api {
+interface ApiCalls {
 
     companion object {
         const val BASE_URL = "https://api.privatbank.ua"

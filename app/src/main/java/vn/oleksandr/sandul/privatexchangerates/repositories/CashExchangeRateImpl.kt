@@ -11,7 +11,7 @@ import vn.oleksandr.sandul.privatexchangerates.manager.remote.RestClient
 import vn.oleksandr.sandul.privatexchangerates.ui.CurrencyModel
 
 
-class CurrencyRepositoryImpl(private val errors : Subject<Throwable>) : CurrencyRepository {
+class CashExchangeRateImpl(private val errors : Subject<Throwable>) : CashExchangeRateRepository {
 
     override fun getCurrencies(context : Context) : Observable<List<CurrencyModel>> {
         val db = AppDatabase.getInstance(context)?.cashExchangeRateDao()?.getAllCashExchangeRate()
@@ -28,10 +28,10 @@ class CurrencyRepositoryImpl(private val errors : Subject<Throwable>) : Currency
     private fun mapResponseToEntity(response : List<CurrencyResponse>?) : List<CashExchangeRateEntity> {
         return response?.map {
             CashExchangeRateEntity().apply {
-                buy = it.buy.toString()
-                ccy = it.ccy.toString()
-                baseCcy = it.baseCcy.toString()
-                sale = it.sale.toString()
+                buy = it.buy
+                ccy = it.ccy
+                baseCcy = it.baseCcy
+                sale = it.sale
             }
         } ?: emptyList()
     }

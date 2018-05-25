@@ -29,7 +29,9 @@ class MainFragment : Fragment() {
         binding.recycler.adapter = adapter
 
         viewModel.currencyLiveData.observe(this, Observer<List<CurrencyModel>> {
+            binding.progress.visibility = View.VISIBLE
             adapter.setDate(it)
+            binding.progress.visibility = View.INVISIBLE
         })
 
         viewModel.errorLiveData.observe(this, Observer<Throwable> {

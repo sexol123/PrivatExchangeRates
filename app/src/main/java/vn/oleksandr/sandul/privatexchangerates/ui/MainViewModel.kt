@@ -9,12 +9,12 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.PublishSubject
-import vn.oleksandr.sandul.privatexchangerates.repositories.CurrencyRepositoryImpl
+import vn.oleksandr.sandul.privatexchangerates.repositories.CashExchangeRateImpl
 
 class MainViewModel(application : Application) : AndroidViewModel(application) {
     private var disposables = CompositeDisposable()
     private var errors : PublishSubject<Throwable> = PublishSubject.create()
-    private var repository : CurrencyRepositoryImpl = CurrencyRepositoryImpl(errors)
+    private var repository : CashExchangeRateImpl = CashExchangeRateImpl(errors)
     var currencyLiveData : MutableLiveData<List<CurrencyModel>> = MutableLiveData()
     var errorLiveData : MutableLiveData<Throwable> = MutableLiveData()
 

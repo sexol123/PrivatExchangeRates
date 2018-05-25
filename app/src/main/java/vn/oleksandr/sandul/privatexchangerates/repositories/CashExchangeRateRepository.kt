@@ -4,6 +4,6 @@ import android.content.Context
 import io.reactivex.Observable
 import vn.oleksandr.sandul.privatexchangerates.ui.CurrencyModel
 
-interface CurrencyRepository {
+interface CashExchangeRateRepository {
     fun getCurrencies(context : Context) : Observable<List<CurrencyModel>>
 }

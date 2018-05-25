@@ -12,10 +12,10 @@ data class CurrencyResponse(
          */
 
         @SerializedName("ccy")
-        var ccy : String? = null,
+        var ccy : String,
         @SerializedName("base_ccy")
-        var baseCcy : String? = null,
+        var baseCcy : String,
         @SerializedName("buy")
-        var buy : String? = null,
+        var buy : String,
         @SerializedName("sale")
-        var sale : String? = null)
+        var sale : String)

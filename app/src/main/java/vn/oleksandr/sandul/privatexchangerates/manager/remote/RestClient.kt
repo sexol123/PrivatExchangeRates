@@ -8,9 +8,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RestClient {
     companion object {
-        private var instance : Api? = null
+        private var instance : ApiCalls? = null
 
-         fun restClient() : Api {
+         fun restClient() : ApiCalls {
             val logging = HttpLoggingInterceptor()
             logging.level = HttpLoggingInterceptor.Level.BODY
             val httpClient = OkHttpClient.Builder()
@@ -19,17 +19,17 @@ class RestClient {
             val retrofit = Retrofit.Builder()
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                    .baseUrl(Api.BASE_URL)
+                    .baseUrl(ApiCalls.BASE_URL)
                     .client(httpClient.build())
                     .build()
-            return retrofit.create(Api::class.java)
+            return retrofit.create(ApiCalls::class.java)
         }
 
-        fun getInstance() : Api {
+        fun getInstance() : ApiCalls {
             if (instance == null) {
                 instance = restClient()
             }
-            return instance as Api
+            return instance as ApiCalls
         }
     }
 }
